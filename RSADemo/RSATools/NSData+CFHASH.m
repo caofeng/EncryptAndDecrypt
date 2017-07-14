@@ -1,0 +1,123 @@
+//
+//  NSData+CFHASH.m
+//  DemoSet
+//
+//  Created by MountainCao on 2017/7/13.
+//  Copyright © 2017年 深圳中业兴融互联网金融服务有限公司. All rights reserved.
+//
+
+#import "NSData+CFHASH.h"
+
+#include <CommonCrypto/CommonDigest.h>
+
+@implementation NSData (CFHASH)
+
+- (NSData *)hashDataWith:(CCDIGESTAlgorithm )ccAlgorithm
+{
+    NSData *retData = nil;
+    if (self.length <1) {
+        return nil;
+    }
+    
+    unsigned char *md;
+    
+    switch (ccAlgorithm) {
+        case CCDIGEST_MD2:
+        {
+            md = malloc(CC_MD2_DIGEST_LENGTH);
+            bzero(md, CC_MD2_DIGEST_LENGTH);
+            CC_MD2(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD2_DIGEST_LENGTH];
+        }
+            break;
+        case CCDIGEST_MD4:
+        {
+            md = malloc(CC_MD4_DIGEST_LENGTH);
+            bzero(md, CC_MD4_DIGEST_LENGTH);
+            CC_MD4(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD4_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_MD5:
+        {
+            md = malloc(CC_MD5_DIGEST_LENGTH);
+            bzero(md, CC_MD5_DIGEST_LENGTH);
+            CC_MD5(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD5_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA1:
+        {
+            md = malloc(CC_SHA1_DIGEST_LENGTH);
+            bzero(md, CC_SHA1_DIGEST_LENGTH);
+            CC_SHA1(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA1_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA224:
+        {
+            md = malloc(CC_SHA224_DIGEST_LENGTH);
+            bzero(md, CC_SHA224_DIGEST_LENGTH);
+            CC_SHA224(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA224_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA256:
+        {
+            md = malloc(CC_SHA256_DIGEST_LENGTH);
+            bzero(md, CC_SHA256_DIGEST_LENGTH);
+            CC_SHA256(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA256_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA384:
+        {
+            md = malloc(CC_SHA384_DIGEST_LENGTH);
+            bzero(md, CC_SHA384_DIGEST_LENGTH);
+            CC_SHA384(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA384_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA512:
+        {
+            md = malloc(CC_SHA512_DIGEST_LENGTH);
+            bzero(md, CC_SHA512_DIGEST_LENGTH);
+            CC_SHA512(self.bytes, (CC_LONG)self.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA512_DIGEST_LENGTH];
+            
+        }
+            break;
+            
+        default:
+            md = malloc(1);
+            break;
+    }
+    
+    free(md);
+    md = NULL;
+    
+    return retData;
+    
+}
+
+- (NSString *)hexString
+{
+    NSMutableString *result = nil;
+    if (self.length <1) {
+        return nil;
+    }
+    result = [[NSMutableString alloc] initWithCapacity:self.length * 2];
+    for (size_t i = 0; i < self.length; i++) {
+        [result appendFormat:@"%02x", ((const uint8_t *) self.bytes)[i]];
+    }
+    return result;
+}
+
+
+@end
