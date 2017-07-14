@@ -29,7 +29,6 @@
 		186B20EC1F1859A300B8F68E /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 186B20E51F1859A300B8F68E /* rsa_public_key.pem */; };
 		186B20ED1F1859A300B8F68E /* rsaCerReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 186B20E61F1859A300B8F68E /* rsaCerReq.csr */; };
 		186B20EE1F1859A300B8F68E /* rsaCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 186B20E71F1859A300B8F68E /* rsaCert.crt */; };
-		186B20F21F186ACB00B8F68E /* RSADocument.md in Sources */ = {isa = PBXBuildFile; fileRef = 186B20F11F186ACB00B8F68E /* RSADocument.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,6 @@
 		186B20E51F1859A300B8F68E /* rsa_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_public_key.pem; sourceTree = "<group>"; };
 		186B20E61F1859A300B8F68E /* rsaCerReq.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCerReq.csr; sourceTree = "<group>"; };
 		186B20E71F1859A300B8F68E /* rsaCert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCert.crt; sourceTree = "<group>"; };
-		186B20F11F186ACB00B8F68E /* RSADocument.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RSADocument.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +143,6 @@
 				186B208D1F184D7300B8F68E /* ViewController.h */,
 				186B208E1F184D7300B8F68E /* ViewController.m */,
 				186B20901F184D7300B8F68E /* Main.storyboard */,
-				186B20F11F186ACB00B8F68E /* RSADocument.md */,
 				186B20931F184D7300B8F68E /* Assets.xcassets */,
 				186B20951F184D7300B8F68E /* LaunchScreen.storyboard */,
 				186B20981F184D7300B8F68E /* Info.plist */,
@@ -365,7 +362,6 @@
 				186B208C1F184D7300B8F68E /* AppDelegate.m in Sources */,
 				186B20891F184D7300B8F68E /* main.m in Sources */,
 				186B20D91F184E5900B8F68E /* NSData+CFSignVerify.m in Sources */,
-				186B20F21F186ACB00B8F68E /* RSADocument.md in Sources */,
 				186B20DF1F18519300B8F68E /* NSString+CFBase64.m in Sources */,
 				186B20D71F184E5900B8F68E /* NSData+CFHASH.m in Sources */,
 				186B20D81F184E5900B8F68E /* NSData+CFRSA.m in Sources */,
@@ -606,6 +602,7 @@
 				186B20B31F184D7400B8F68E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		186B20B41F184D7400B8F68E /* Build configuration list for PBXNativeTarget "RSADemoTests" */ = {
 			isa = XCConfigurationList;
@@ -614,6 +611,7 @@
 				186B20B61F184D7400B8F68E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		186B20B71F184D7400B8F68E /* Build configuration list for PBXNativeTarget "RSADemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -622,6 +620,7 @@
 				186B20B91F184D7400B8F68E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
